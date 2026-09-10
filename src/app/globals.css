@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #d97757;
+  --accent-soft: rgba(217, 119, 87, 0.14);
+}
+
+html,
+body {
+  background: #0b0d10;
+  color: #e4e6eb;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+code,
+pre,
+.mono {
+  font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2f3a;
+  border-radius: 8px;
+  border: 2px solid #0b0d10;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4150;
+}
+
+::selection {
+  background: rgba(217, 119, 87, 0.35);
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
+  border: 1px solid #1e232c;
+  border-radius: 14px;
+}
+
+.card-hover {
+  transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+.card-hover:hover {
+  border-color: #343c4b;
+  transform: translateY(-1px);
+}
+
+.input-dark {
+  background: #11141a;
+  border: 1px solid #262c37;
+  border-radius: 9px;
+  padding: 8px 12px;
+  color: #e4e6eb;
+  width: 100%;
+  font-size: 13.5px;
+  outline: none;
+}
+.input-dark:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.input-dark::placeholder {
+  color: #5b6472;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 9px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.13s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #1b100b;
+}
+.btn-primary:hover:not(:disabled) {
+  background: #e08a6c;
+}
+.btn-ghost {
+  background: #161a21;
+  border-color: #262c37;
+  color: #d6d9df;
+}
+.btn-ghost:hover:not(:disabled) {
+  border-color: #3a4150;
+  background: #1b2029;
+}
+.btn-danger {
+  background: rgba(248, 113, 113, 0.12);
+  border-color: rgba(248, 113, 113, 0.35);
+  color: #fca5a5;
+}
+.btn-danger:hover:not(:disabled) {
+  background: rgba(248, 113, 113, 0.2);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  letter-spacing: 0.01em;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.82);
+  }
+}
+.live-dot {
+  animation: pulse-dot 1.4s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fade-up 0.25s ease both;
+}
+
+.codeblock {
+  background: #0d1015;
+  border: 1px solid #1e232c;
+  border-radius: 11px;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
